@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Policy — Flowzen</title>
+<title>Privacy Policy & Support — Flowzen</title>
 <style>
   :root {
     color-scheme: light dark;
@@ -75,7 +75,7 @@
 <body>
 <main>
   <h1>Privacy Policy for Flowzen</h1>
-  <p class="updated">Last updated: August 4, 2026</p>
+  <p class="updated">Last updated: September 28, 2026</p>
 
   <p>Flowzen is a personal expense tracker that reads bank SMS notifications you already receive and turns them into categorized transactions — entirely on your device. This policy explains exactly what data the app touches, where it goes, and what it never does.</p>
 
@@ -83,7 +83,7 @@
     <ul>
       <li>All your transaction data is stored <strong>locally on your iPhone</strong>, using Apple's on-device SwiftData framework. We do not operate any server, and the app does not create an account for you.</li>
       <li>The app <strong>never reads your Messages directly</strong>. iOS does not allow any third-party app to do that. Instead, you configure a Shortcuts Personal Automation yourself; when a matching message arrives, iOS hands its text to this app through Apple's official App Intents framework — the same mechanism any Shortcuts action uses.</li>
-      <li>By default, the app makes <strong>zero network requests</strong>. The only exceptions are the optional "Smart Parsing" feature and the optional Flowzen Pro subscription, both described below — both require your explicit action to activate.</li>
+      <li>The app makes <strong>zero network requests</strong>. All parsing happens on-device. The only data that ever leaves your device is handled by Apple for the optional Flowzen Pro subscription, described below.</li>
       <li>There is no advertising, no analytics SDK, and no tracking of any kind.</li>
     </ul>
   </div>
@@ -94,17 +94,7 @@
     <li><strong>Learned merchant categories:</strong> if you correct a transaction's category, the app remembers that merchant → category mapping locally, to categorize future transactions from the same merchant automatically.</li>
     <li><strong>CSV files you choose to import:</strong> read directly from the file you pick, processed on-device, never uploaded anywhere.</li>
   </ul>
-  <p>None of the above ever leaves your device unless you opt into Smart Parsing.</p>
-
-  <h2>Optional: Smart Parsing (Anthropic API)</h2>
-  <p>Smart Parsing is an opt-in feature, <strong>off by default</strong>, that improves parsing accuracy for unusual bank SMS formats using Anthropic's Claude API. If you turn it on and provide your own Anthropic API key:</p>
-  <ul>
-    <li>The <strong>full raw text of the SMS message</strong> (not just the amount) is sent over an encrypted HTTPS connection to Anthropic's API, using your own API key.</li>
-    <li>Your API key is stored only in the iOS Keychain, protected by your device's encryption; it is never sent anywhere except in requests to Anthropic's own API.</li>
-    <li>We do not control or see what Anthropic does with that request beyond what's described in <a href="https://www.anthropic.com/legal/privacy">Anthropic's own privacy policy</a> — since this is a third party you are directly interacting with using your own credentials, please review their policy separately.</li>
-    <li>If the request fails for any reason (no internet, invalid key, etc.), the app automatically falls back to its fully offline, on-device parser — no transaction is ever lost, and no error is shown to you because of network issues.</li>
-    <li>You can turn Smart Parsing off at any time in Settings, and delete your saved API key with one tap.</li>
-  </ul>
+  <p>None of the above ever leaves your device.</p>
 
   <h2>Optional: Flowzen Pro (subscription)</h2>
   <p>Flowzen Pro is an optional, auto-renewable subscription that unlocks unlimited transaction history, Reports, Budgets, CSV import, and Home Screen widgets. Purchases are handled entirely by Apple through StoreKit:</p>
@@ -120,7 +110,7 @@
     <li>No account creation, no login, no user profiles.</li>
     <li>No advertising or ad networks.</li>
     <li>No analytics or usage-tracking SDKs of any kind.</li>
-    <li>No sharing or selling of any data to third parties, other than the Smart Parsing and Flowzen Pro purchase flows described above, which only happen if you explicitly use those features.</li>
+    <li>No sharing or selling of any data to third parties, other than the Flowzen Pro purchase flow handled by Apple as described above.</li>
     <li>No access to your Messages app, contacts, photos, location, or any other data beyond what you explicitly provide (SMS text via Shortcuts, or a CSV file you choose to import).</li>
   </ul>
 
@@ -129,19 +119,26 @@
   <ul>
     <li><strong>Settings → Delete all data</strong> permanently removes every stored transaction from the device.</li>
     <li><strong>Settings → Forget learned merchant categories</strong> clears the merchant → category memory.</li>
-    <li><strong>Settings → Smart Parsing toggle / Remove key</strong> turns the optional AI feature off and deletes the stored API key from the Keychain.</li>
     <li><strong>Settings → Manage Subscription / Restore Purchases</strong> lets you review or cancel Flowzen Pro at any time.</li>
     <li>Deleting the app itself removes its entire local database.</li>
   </ul>
 
   <h2>Children's privacy</h2>
-  <p>This app is not directed at children and does not knowingly collect data from children. It has no account system and no data leaves the device except through the explicit, adult-configured Smart Parsing or Flowzen Pro purchase flows described above.</p>
+  <p>This app is not directed at children and does not knowingly collect data from children. It has no account system and no data leaves the device except through the Flowzen Pro purchase flow handled by Apple, described above.</p>
 
   <h2>Changes to this policy</h2>
   <p>If this policy changes, the "Last updated" date at the top of this page will be updated. Continued use of the app after a change constitutes acceptance of the revised policy.</p>
 
+  <h2 id="support">Support</h2>
+  <p>Need help with Flowzen, found a bug, or have a question or feature request? We're happy to help.</p>
+  <ul>
+    <li><strong>Email:</strong> <a href="mailto:ssfedor573@gmail.com">ssfedor573@gmail.com</a></li>
+    <li>We aim to respond within a few business days.</li>
+    <li>For setup help, see the in-app guide: <strong>Settings → "How Flowzen Works &amp; Setup Guide"</strong>, which walks you through the Shortcuts automation step by step.</li>
+  </ul>
+
   <h2>Contact</h2>
-  <p>Questions about this policy or your data: <a href="mailto:osseliyfedor@gmail.com">osseliyfedor@gmail.com</a></p>
+  <p>Questions about this policy or your data: <a href="mailto:ssfedor573@gmail.com">ssfedor573@gmail.com</a></p>
 
   <footer>Flowzen — a fully local, offline-first expense tracker.</footer>
 </main>
